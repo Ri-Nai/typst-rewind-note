@@ -30,20 +30,21 @@
     ]
   }
 
-  // 二级标题：中号 + 左侧装饰条 + 下划线
+  // 二级标题：中号 + 左侧装饰条 + 高亮背景
   show heading.where(level: 2): it => {
     v(spacing.h2-gap)
     box[
       #box(
-        baseline: 0.2em,
+        baseline: 0.25em,
         width: decorations.h2-bar-width,
         height: decorations.h2-bar-height,
         fill: accent-color.lighten(20%),
         radius: decorations.h2-bar-radius,
       )
       #h(spacing.decor-gap-sm)
-      #highlight(
+      #box(
         fill: accent-color.lighten(40%).opacify(-50%),
+        inset: (x: 0.15em, y: 0.05em),
         text(
           size: font-sizes.h2,
           weight: "bold",
